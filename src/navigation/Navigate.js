@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/Home/Home';
 import EditPostScreen from '../screens/EditPost/EditPost';
 import BlogListScreen from '../screens/BlogList/BlogList';
-import CreatePostScreen from '../screens/EditPost/EditPost';
+import CreatePostScreen from '../screens/CreatePost/CreatePost';
 
 
 const Stack = createStackNavigator();

@@ -6,7 +6,7 @@ const blogReducer = (state, action) => {
 
     switch (action.type) {
         case 'addPost':
-            return [...state, { id: Math.floor(Math.random() * 9999) + 1, title: `Blog Post #${state.length + 1}` }]
+            return [...state, { id: Math.floor(Math.random() * 9999) + 1, title: action.payload.title, description: action.payload.description , content: action.payload.content}]
         case 'editPost':
             return {} 
         case 'deletePost':
@@ -17,8 +17,9 @@ const blogReducer = (state, action) => {
 };
 
 const addBlogPost = (dispatch) => {
-    return () => {
-        dispatch({ type: 'addPost' })
+    return (title, description, content, callback) => {
+        dispatch({ type: 'addPost', payload:{title,  description, content} })
+        callback();
     }
 }
 
